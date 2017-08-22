@@ -1,0 +1,2 @@
+# EasyphpRecipeApps
+一番やさしいPHPの教本の課題アプリ

@@ -22,9 +22,9 @@
             echo "<th>料理名</th><th>予算</th><th>難易度</th>\n";
             foreach($result as $row) {
                 echo "<tr>\n";
-                echo "<td>" . htmlspecialchars($row['recipe_name'], ENT_QUOTES, 'UTF-8') . "</td>\n";
-                echo "<td>" . htmlspecialchars$row['budget'] . "</td>\n";
-                echo "<td>" . $row['difficulty'] . "</td>\n";
+                echo "<td>" . htmlspecialchars($row['recipe_name'],ENT_QUOTES, 'UTF-8') . "</td>\n";
+                echo "<td>" . htmlspecialchars($row['budget'],ENT_QUOTES, 'UTF-8') . "</td>\n";
+                echo "<td>" . htmlspecialchars($row['difficulty'],ENT_QUOTES, 'UTF-8') . "</td>\n";
                 echo "</tr>\n";            
             }
             echo "</tr>\n";            

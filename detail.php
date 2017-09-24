@@ -12,7 +12,11 @@ try {
     $stmt->bindValue(1, $id, PDO::PARAM_INT);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    print_r($result);
+    echo "料理名：" . htmlspecialchars($result['recipe_name'],ENT_QUOTES, 'UTF-8') . "<br>\n";
+    echo "カテゴリ:" . htmlspecialchars($result['category'],ENT_QUOTES, 'UTF-8') . "<br>\n";
+    echo "予算:" . htmlspecialchars($result['budget'],ENT_QUOTES, 'UTF-8') . "<br>\n";
+    echo "難易度:" . htmlspecialchars($result['difficulty'],ENT_QUOTES, 'UTF-8') . "<br>\n";
+    echo "作り方:<br>" . nl2br(htmlspecialchars($result['howto'],ENT_QUOTES, 'UTF-8')). "<br>\n";
     $dbh = null;
 }catch(Exception $e) {
     echo "エラー発生: " . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') . "<br>";

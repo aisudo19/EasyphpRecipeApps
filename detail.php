@@ -18,7 +18,9 @@ try {
     echo "難易度:" . htmlspecialchars($result['difficulty'],ENT_QUOTES, 'UTF-8') . "<br>\n";
     echo "作り方:<br>" . nl2br(htmlspecialchars($result['howto'],ENT_QUOTES, 'UTF-8')). "<br>\n";
     $dbh = null;
+    echo "<a href='index.php'>トップページへ戻る</a>";
 }catch(Exception $e) {
     echo "エラー発生: " . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') . "<br>";
+    echo "<a href='index.php'>トップページへ戻る</a>";
     die();
 }

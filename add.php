@@ -24,6 +24,7 @@ try{
     $stmt->execute();
     $dbh = null;
     echo "レシピの登録が完了しました";
+    echo "<a href='index.php'>トップページへ戻る</a>";
 }catch (PDOException $e){
     echo "エラー発生: " . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') . "<br>";
     die();

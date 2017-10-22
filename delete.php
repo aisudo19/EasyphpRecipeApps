@@ -1,6 +1,5 @@
 <?php
-$user="nakamura";
-$pass="nakamura";
+require_once 'MAMP\db_config.php';
 
 try{
 if (empty($_GET['id'])) throw new Exception('ID不正');
@@ -17,8 +16,10 @@ if (empty($_GET['id'])) throw new Exception('ID不正');
     $stmt->execute();
     $dbh = null;
     echo "ID: " . htmlspecialchars($id, ENT_QUOTES, 'UTF-8') . "の削除が完了しました。";
+    echo "<a href='index.php'>トップページへ戻る</a>";
 } catch(Exception $e) {
     echo "エラー発生: " . htmlspecialchars($e->getMexssage(), ENT_QUOTES, 'UTF-8') . "<br>";
+    echo "<a href='index.php'>トップページへ戻る</a>";
     die();
 }
 

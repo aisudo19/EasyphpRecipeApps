@@ -1,6 +1,5 @@
 <?php
-$user="nakamura";
-$pass="nakamura";
+require_once 'MAMP\db_config.php';
 try{
     if (empty($_GET['id'])) throw new Exception('ID不正');
     $id = (int) $_GET['id'];
@@ -15,6 +14,7 @@ try{
     $dbh = null;
 }catch(Exception $e) {
     echo "エラー発生: " . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') . "<br>";
+    echo "<a href='index.php'>トップページへ戻る</a>";
     die();
 }
 ?>
@@ -54,6 +54,8 @@ try{
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($result['id'], ENT_QUOTES< 'UTF-8'); ?>">
         
         <input type="submit" value="送信">
+        <br>
+        <?php echo "<a href='index.php'>トップページへ戻る</a>";?>
 </form>
 </body>
 </html>
